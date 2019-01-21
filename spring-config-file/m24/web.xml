@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
+  <display-name>SpringWebApp</display-name>
+<!--  <welcome-file-list>
+    <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
+   -->
+   
+   <!-- it loads the dispatcher servlet xml which is under WEB-INF as default directory 
+   and with [name]-servlet.xml as naming convention-->
+    <servlet>	
+        <servlet-name>beacon</servlet-name>
+        <servlet-class>
+            org.springframework.web.servlet.DispatcherServlet
+        </servlet-class>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    
+    <!-- The url-pattern element of a servlet-mapping or a filter-mapping 
+    associates a filter or servlet with a set of URLs.  -->
+    <servlet-mapping>
+        <servlet-name>beacon</servlet-name>
+
+<!-- url pattern - match the given request based on the pattern -->
+        <url-pattern>/</url-pattern>
+    </servlet-mapping>
+    
+    </web-app>
